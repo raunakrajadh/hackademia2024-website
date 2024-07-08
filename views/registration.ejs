@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../assets/css/registration.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.gstatic.com/images/branding/product/1x/forms_2020q4_48dp.png" alt="Forms Logo">
+            Registration Form
+        </div>
+        <form class="form-content" method="post" action="/registration">
+            <div class="info-text">
+                @hackademia<br>
+                Contact us at 1234567890 or <a href="mailto:abc@example.com">abc@example.com</a>
+            </div>
+            <div class="form-group">
+                <label for="attendance">Can you attend? <span class="required-asterisk">*</span></label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="attendance" value="yes"> Yes, I'll be there
+                    </label>
+                    <label>
+                        <input type="radio" name="attendance" value="no"> Sorry, can't make it
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="names">What are the names of people attending?</label>
+                <textarea id="names" name="names" rows="3"></textarea>
+            </div>
+            <button class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

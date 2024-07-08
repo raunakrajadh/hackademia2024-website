@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="../assets/css/forum.css">
+</head>
+<body>
+
+    <header>Forum</header>
+
+    <div class="container">
+
+        <button class="new-thread" onclick="document.querySelector('.new-thread-form').style.display='block'">New Thread</button>
+        <div class="new-thread-form">
+            <h3>Post a New Thread</h3>
+            <form method="post" action="/forum/new-forum">
+                <input name="forum_title" type="text" placeholder="Thread Title" required>
+                <textarea name="forum_content" placeholder="Thread Content" rows="5" required></textarea>
+                <div class="button-container">
+                    <input type="submit" value="Post Thread" class="new-thread">
+                    <button style="background-color: rgb(255, 95, 95);" type="submit" class="close-form" onclick="document.querySelector('.new-thread-form').style.display='none'">Close</button>
+                </div>
+            </form>
+        </div>
+
+        <br><br>
+
+        <% if(forums.length){ %>
+            <% forums.forEach((forum) => { %>
+                <div class="thread">
+                    <h2><%= forum.title %></h2>
+                    <p class="info">Posted by <%= forum.user %> on <%= forum.createdAt %></p>
+                    <p><%= forum.content %></p>
+    
+                    <% forum.replies.forEach((reply) => { %>
+                        <div class="reply">
+                            <form id="<%- forum.id %>/<%- reply.id %>" method="post" action="/forum/delete-reply/<%- forum.id %>/<%- reply.id %>">
+                                <p class="info">Replied by <%= reply.user %> | <a href="javascript:{}" onclick="document.getElementById('<%- forum.id %>/<%- reply.id %>').submit()">Delete Reply</a></p>
+                                <p><%= reply.content %></p>
+                            </form>
+                        </div>
+                    <% }) %>
+
+                    <br>
+                    <form id="delete-forum/<%- forum.id %>" method="post" action="/forum/delete-forum/<%- forum.id %>"></form>
+                    <button class="post-reply" onclick="document.getElementById('reply-form/<%- forum.id %>').style.display='block'">Post a Reply</button>
+                    <button style="background-color: rgb(255, 95, 95);" class="post-reply" type="submit" onclick="document.getElementById('delete-forum/<%- forum.id %>').submit()">Delete Thread</button>
+
+                    <div class="reply-form" id="reply-form/<%- forum.id %>">
+                        <form method="post" action="/forum/new-reply/<%- forum.id %>">
+                            <textarea name="reply" placeholder="Your Reply" rows="3" required></textarea>
+                            <div class="button-container">
+                                <input type="submit" value="Post Reply" class="new-thread">
+                                <button style="background-color: rgb(255, 95, 95);" type="button" class="close-form" onclick="document.getElementById('reply-form/<%- forum.id %>').style.display='none'">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="thread">
+                <h2>No forums</h2>
+                <p class="info">@forums</p>
+            </div>
+        <% } %>
+
+    </div>
+
+</body>
+</html>

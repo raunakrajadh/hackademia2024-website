@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.thread {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.thread h2 {
+    margin-top: 0;
+    color: #4CAF50;
+}
+.thread p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.thread .info {
+    font-size: 14px;
+    color: #777;
+}
+.reply {
+    background-color: #f1f1f1;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.reply p {
+    margin: 0;
+}
+.reply .info {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.new-thread, .close-form {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+    height: 35px;
+}
+.new-thread:hover, .close-form:hover {
+    background-color: #45a049;
+}
+.post-reply {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.post-reply:hover {
+    background-color: #45a049;
+}
+.new-thread-form, .reply-form {
+    display: none;
+    margin-top: 20px;
+}
+.new-thread-form input, .new-thread-form textarea, .reply-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.new-thread-form input[type="submit"], .reply-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-thread-form input[type="submit"]:hover, .reply-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+    .new-thread, .post-reply {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .thread h2 {
+        font-size: 18px;
+    }
+    .thread p, .reply p {
+        font-size: 14px;
+    }
+    .thread .info, .reply .info {
+        font-size: 12px;
+    }
+    .new-thread-form input[type="submit"], .reply-form input[type="submit"] {
+        width: 100%;
+        font-size: 14px;
+    }
+}
