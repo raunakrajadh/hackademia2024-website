@@ -1,0 +1,164 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+section {
+  background-color: #fff;
+  padding: 2em;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+li h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+li p {
+  margin-bottom: 10px;
+}
+
+#what-is-hackademia {
+  background-image: linear-gradient(to bottom, #333, #444);
+  color: #fff;
+  padding: 2em;
+}
+
+#faq ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#faq li {
+  width: 45%;
+  margin-right: 20px;
+}
+
+#sponsors ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#sponsors li {
+  width: 45%;
+  margin-right: 20px;
+}
+
+#sponsors img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#organizers ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#organizers li {
+  width: 30%;
+  margin-right: 20px;
+}
+
+#organizers img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#call-to-action {
+  background-color: #333;
+  color: #fff;
+  padding: 2em;
+  text-align: center;
+}
+
+#call-to-action button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#call-to-action button:hover {
+  background-color: #ccc;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
